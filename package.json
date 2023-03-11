@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "add": "^2.0.6",
+    "alchemy-sdk": "^2.6.1",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "yarn": "^1.22.19"
   }
 }
