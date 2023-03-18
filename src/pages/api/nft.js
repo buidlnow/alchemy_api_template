@@ -8,13 +8,15 @@ const settings = {
 const alchemy = new Alchemy(settings);
 
 // Replace the userAddress value with your ENS or ETH Address
-const userAddress = "rahat.eth"
+let userAddress = "rahat.eth"
 
 export default async function handler(req, res) {
+  //if request is post look for conected address and update
+  if (req.method === 'POST') {
+    const { data } = req.body;
+    userAddress = data.address
+  }
   const nftsForOwner = await alchemy.nft.getNftsForOwner(userAddress)
-  // const data = await fetch(
-  //   `https://www.test.com/api/hello?apiKey=${process.env.API_KEY}`,
-  // ).then(response => response.json());
 
   res.json({...nftsForOwner, userAddress}); // Send the response
 }
